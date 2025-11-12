@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
-    <!-- Configuración de Colores y Estilos Personalizados de Tailwind -->
+    <!-- Configuración de Colores y Estilos Personalizados de Tailwind (ACTUALIZADO) -->
     <script>
         tailwind.config = {
             theme: {
@@ -22,12 +22,11 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        // Paleta Andina Moderna
-                        'andes-terracotta': '#B85C38', // Un terracota cálido
-                        'andes-blue': '#0D2A4C',      // Azul profundo (noche/lago)
-                        'andes-gold': '#E09F3E',      // Dorado (sol/maíz)
-                        'andes-fuchsia': '#C01D5D',   // Fucsia (textiles)
-                        'andes-light': '#F4F1ED',    // Un blanco hueso/beige claro
+                        // Paleta Andina Moderna (ACTUALIZADA)
+                        'andes-terracotta': '#B85C38', // Color Primario (Base)
+                        'andes-turquoise': '#00B8D4',  // Color Secundario (Acentos)
+                        'andes-gold': '#E09F3E',      // Acento cálido (se mantiene)
+                        'andes-light': '#F4F1ED',    // Color Terciario (Fondo claro)
                     }
                 }
             }
@@ -39,10 +38,15 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Estilo para la transición suave de las pestañas */
+        .tab-content {
+            transition: opacity 0.3s ease-in-out;
+        }
     </style>
 </head>
 
-<body class="bg-andes-light text-andes-blue font-sans">
+<body class="bg-andes-light text-andes-terracotta font-sans">
 
     <!-- ===== HEADER Y NAVEGACIÓN ===== -->
     <!-- Es 'sticky' (fijo en la parte superior) para fácil navegación -->
@@ -50,24 +54,24 @@
         <nav class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
             
             <!-- Logo/Nombre -->
-            <a href="#" class="text-2xl font-bold text-andes-blue">
+            <a href="#" class="text-2xl font-bold text-andes-terracotta">
                 Qhapaq Ñan
             </a>
 
             <!-- Navegación de Escritorio (Oculta en móvil) -->
             <div class="hidden md:flex items-center space-x-6">
-                <a href="#inicio" class="text-gray-600 hover:text-andes-fuchsia transition duration-300">Inicio</a>
-                <a href="#comunidad" class="text-gray-600 hover:text-andes-fuchsia transition duration-300">Comunidad</a>
-                <a href="#talleres" class="text-gray-600 hover:text-andes-fuchsia transition duration-300">Talleres</a>
-                <a href="#manifiesto" class="text-gray-600 hover:text-andes-fuchsia transition duration-300">Nosotros</a>
-                <a href="#newsletter" class="bg-andes-fuchsia text-white px-5 py-2 rounded-full font-semibold shadow-lg hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300">
+                <a href="#inicio" class="text-gray-600 hover:text-andes-turquoise transition duration-300">Inicio</a>
+                <a href="#comunidad" class="text-gray-600 hover:text-andes-turquoise transition duration-300">Comunidad</a>
+                <a href="#talleres" class="text-gray-600 hover:text-andes-turquoise transition duration-300">Talleres</a>
+                <a href="#manifiesto" class="text-gray-600 hover:text-andes-turquoise transition duration-300">Nosotros</a>
+                <a href="#newsletter" class="bg-andes-turquoise text-white px-5 py-2 rounded-full font-semibold shadow-lg hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300">
                     Únete
                 </a>
             </div>
 
             <!-- Botón de Menú Móvil (Hamburguesa) -->
             <div class="md:hidden flex items-center">
-                <button id="mobile-menu-button" class="text-andes-blue focus:outline-none">
+                <button id="mobile-menu-button" class="text-andes-terracotta focus:outline-none">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
@@ -79,7 +83,7 @@
             <a href="#comunidad" class="block px-6 py-3 text-gray-700 hover:bg-andes-light">Comunidad</a>
             <a href="#talleres" class="block px-6 py-3 text-gray-700 hover:bg-andes-light">Talleres</a>
             <a href="#manifiesto" class="block px-6 py-3 text-gray-700 hover:bg-andes-light">Nosotros</a>
-            <a href="#newsletter" class="block px-6 py-4 bg-andes-fuchsia text-white text-center font-semibold">
+            <a href="#newsletter" class="block px-6 py-4 bg-andes-turquoise text-white text-center font-semibold">
                 Únete a la Comunidad
             </a>
         </div>
@@ -91,11 +95,8 @@
         <!-- ===== A. HERO SECTION ===== -->
         <!-- Prioridad: Suscripción a la comunidad -->
         <section id="inicio" class="relative min-h-[85vh] md:min-h-[80vh] flex items-center justify-center text-center text-white px-4 py-20">
-            <!-- Fondo de Imagen (Placeholder) - Eliminado -->
-            <!-- <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1200x800/0D2A4C/F4F1ED');"></div> -->
-            
-            <!-- Fondo de color azul sólido (antes superposición) -->
-            <div class="absolute inset-0 bg-andes-blue"></div>
+            <!-- Fondo de color terracota sólido (antes azul) -->
+            <div class="absolute inset-0 bg-andes-terracotta"></div>
 
             <!-- Contenido del Hero -->
             <div class="relative z-10 max-w-3xl mx-auto">
@@ -110,7 +111,7 @@
                 </p>
                 
                 <!-- CTA Principal (Newsletter/Comunidad) -->
-                <a href="#newsletter" class="bg-andes-gold text-andes-blue px-8 py-4 rounded-full text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300">
+                <a href="#newsletter" class="bg-andes-gold text-andes-terracotta px-8 py-4 rounded-full text-lg font-bold shadow-xl transform hover:scale-105 transition-all duration-300">
                     Únete a la Comunidad / Sumaq Riqsikuy
                 </a>
             </div>
@@ -120,7 +121,7 @@
         <section id="contenido" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4 md:px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Contenido Hecho Para Ti</h2>
-                <h3 class="text-2xl md:text-3xl font-semibold text-andes-fuchsia text-center mb-12">Qampaq Rurasqa</h3>
+                <h3 class="text-2xl md:text-3xl font-semibold text-andes-turquoise text-center mb-12">Qampaq Rurasqa</h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                     <!-- Video Placeholder 1 (TikTok) -->
@@ -135,41 +136,42 @@
                         </div>
                         <h4 class="text-lg font-bold mb-2">Quechua en la Ciudad: 5 Frases</h4>
                         <p class="text-sm text-gray-600 mb-3">Cómo usar el quechua en tu día a día en Cusco.</p>
-                        <a href="#" class="font-semibold text-andes-fuchsia hover:underline">Ver en TikTok &rarr;</a>
+                        <a href="#" class="font-semibold text-andes-turquoise hover:underline">Ver en TikTok &rarr;</a>
                     </div>
 
                     <!-- Video Placeholder 2 (YouTube) -->
                     <!-- IMAGEN: Reemplazar con una miniatura de YouTube de alta calidad. -->
                     <div class="bg-andes-light p-4 rounded-xl shadow-lg border border-gray-200">
                         <div class="relative aspect-video rounded-lg overflow-hidden mb-4 bg-gray-300">
-                            <img src="https://placehold.co/400x300/0D2A4C/FFFFFF?text=Video+YouTube+1" alt="Video de YouTube" class="w-full h-full object-cover">
+                            <img src="https://placehold.co/400x300/00B8D4/FFFFFF?text=Video+YouTube+1" alt="Video de YouTube" class="w-full h-full object-cover">
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <svg class="w-16 h-16 text-white opacity-80" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"></path></svg>
                             </div>
                         </div>
                         <h4 class="text-lg font-bold mb-2">Entrevista: Emprendedora Andina</h4>
                         <p class="text-sm text-gray-600 mb-3">Conoce a Maria, quien usa textiles para su marca.</p>
-                        <a href="#" class="font-semibold text-andes-fuchsia hover:underline">Ver en YouTube &rarr;</a>
+                        <a href="#" class="font-semibold text-andes-turquoise hover:underline">Ver en YouTube &rarr;</a>
                     </div>
                     
                     <!-- Video Placeholder 3 (TikTok) -->
                     <!-- IMAGEN: Reemplazar con otra captura de TikTok. -->
                     <div class="bg-andes-light p-4 rounded-xl shadow-lg border border-gray-200">
                         <div class="relative aspect-video rounded-lg overflow-hidden mb-4 bg-gray-300">
-                            <img src="https://placehold.co/400x300/C01D5D/FFFFFF?text=Video+TikTok+2" alt="Video de TikTok" class="w-full h-full object-cover">
+                            <img src="https://placehold.co/400x300/E09F3E/FFFFFF?text=Video+TikTok+2" alt="Video de TikTok" class="w-full h-full object-cover">
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <svg class="w-16 h-16 text-white opacity-80" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"></path></svg>
                             </div>
                         </div>
                         <h4 class="text-lg font-bold mb-2">El Sabor de Puno: Unboxing</h4>
                         <p class="text-sm text-gray-600 mb-3">Probando snacks locales con un toque moderno.</p>
-                        <a href="#" class="font-semibold text-andes-fuchsia hover:underline">Ver en TikTok &rarr;</a>
+                        <a href="#" class="font-semibold text-andes-turquoise hover:underline">Ver en TikTok &rarr;</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== C. GENERACIÓN DE COMUNIDAD (Idea 1) ===== -->
+        <!-- El fondo terracota ahora coincide con el color primario -->
         <section id="comunidad" class="py-16 md:py-24 bg-andes-terracotta text-white">
             <div class="container mx-auto px-4 md:px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Campaña: "Habla Tu Historia"</h2>
@@ -188,7 +190,7 @@
         <section id="talleres" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4 md:px-6">
                 <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-andes-blue mb-4">Talleres Digitales Temáticos</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-andes-terracotta mb-4">Talleres Digitales Temáticos</h2>
                     <p class="text-lg text-gray-700">
                         Impulsa tu talento y tu negocio con herramientas digitales y el poder de nuestra cultura. Cursos prácticos diseñados para ti.
                     </p>
@@ -200,17 +202,17 @@
                     <!-- Taller Card 1 -->
                     <!-- IMAGEN: Reemplazar con foto de un emprendedor joven usando una laptop en un contexto andino. -->
                     <div class="bg-andes-light rounded-xl shadow-2xl overflow-hidden flex flex-col border border-gray-200">
-                        <img src="https://placehold.co/400x250/0D2A4C/FFFFFF?text=Quechua+para+Emprendedores" alt="Taller de Quechua" class="w-full h-48 object-cover">
+                        <img src="https://placehold.co/400x250/B85C38/FFFFFF?text=Quechua+para+Emprendedores" alt="Taller de Quechua" class="w-full h-48 object-cover">
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-andes-blue mb-3">Quechua Básico para Emprendedores</h3>
+                            <h3 class="text-xl font-bold text-andes-terracotta mb-3">Quechua Básico para Emprendedores</h3>
                             <p class="text-gray-600 mb-4 flex-grow">
                                 Aprende frases clave en quechua para conectar con tus clientes y diferenciar tu marca en el mercado.
                             </p>
                             <div class="flex justify-between items-center mb-5">
-                                <span class="text-lg font-bold text-andes-fuchsia">S/ 120.00</span>
+                                <span class="text-lg font-bold text-andes-turquoise">S/ 120.00</span>
                                 <span class="text-sm font-semibold text-gray-700 bg-andes-gold/30 px-3 py-1 rounded-full">Próxima Fecha: 15 Dic</span>
                             </div>
-                            <a href="#" class="w-full text-center bg-andes-fuchsia text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300">
+                            <a href="#" class="w-full text-center bg-andes-turquoise text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300">
                                 Inscríbete Ahora
                             </a>
                         </div>
@@ -219,17 +221,17 @@
                     <!-- Taller Card 2 -->
                     <!-- IMAGEN: Reemplazar con una foto vibrante (estilo "andino-core") de un paisaje o retrato. -->
                     <div class="bg-andes-light rounded-xl shadow-2xl overflow-hidden flex flex-col border border-gray-200">
-                        <img src="https://placehold.co/400x250/B85C38/FFFFFF?text=Fotograf%C3%ADa+Andina+con+Celular" alt="Taller de Fotografía" class="w-full h-48 object-cover">
+                        <img src="https://placehold.co/400x250/00B8D4/FFFFFF?text=Fotograf%C3%ADa+Andina+con+Celular" alt="Taller de Fotografía" class="w-full h-48 object-cover">
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-andes-blue mb-3">Fotografía Andina para TikTok</h3>
+                            <h3 class="text-xl font-bold text-andes-terracotta mb-3">Fotografía Andina para TikTok</h3>
                             <p class="text-gray-600 mb-4 flex-grow">
                                 Captura la esencia de tu entorno. Taller de composición, luz y edición de video corto desde tu celular.
                             </p>
                             <div class="flex justify-between items-center mb-5">
-                                <span class="text-lg font-bold text-andes-fuchsia">S/ 90.00</span>
+                                <span class="text-lg font-bold text-andes-turquoise">S/ 90.00</span>
                                 <span class="text-sm font-semibold text-gray-700 bg-andes-gold/30 px-3 py-1 rounded-full">Inicia: 05 Ene</span>
                             </div>
-                            <a href="#" class="w-full text-center bg-andes-fuchsia text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300">
+                            <a href="#" class="w-full text-center bg-andes-turquoise text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300">
                                 Inscríbete Ahora
                             </a>
                         </div>
@@ -240,15 +242,15 @@
                     <div class="bg-andes-light rounded-xl shadow-2xl overflow-hidden flex flex-col border border-gray-200 md:col-span-2 lg:col-span-1">
                         <img src="https://placehold.co/400x250/E09F3E/FFFFFF?text=Marca+Personal+con+Identidad" alt="Taller de Marca Personal" class="w-full h-48 object-cover">
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-andes-blue mb-3">Marca Personal con Identidad</h3>
+                            <h3 class="text-xl font-bold text-andes-terracotta mb-3">Marca Personal con Identidad</h3>
                             <p class="text-gray-600 mb-4 flex-grow">
                                 Define tu voz y estética. Aprende a construir una marca personal auténtica que resuene con tu herencia.
                             </p>
                             <div class="flex justify-between items-center mb-5">
-                                <span class="text-lg font-bold text-andes-fuchsia">S/ 150.00</span>
+                                <span class="text-lg font-bold text-andes-turquoise">S/ 150.00</span>
                                 <span class="text-sm font-semibold text-gray-700 bg-andes-gold/30 px-3 py-1 rounded-full">Taller Grabado</span>
                             </div>
-                            <a href="#" class="w-full text-center bg-andes-fuchsia text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300">
+                            <a href="#" class="w-full text-center bg-andes-turquoise text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300">
                                 Comprar Acceso
                             </a>
                         </div>
@@ -258,27 +260,63 @@
             </div>
         </section>
 
-        <!-- ===== E. MANIFIESTO / MISIÓN ===== -->
-        <section id="manifiesto" class="py-16 md:py-24 bg-andes-blue text-andes-light">
+        <!-- ===== E. NOSOTROS (MISIÓN, VISIÓN, VALORES) - VERSIÓN INTERACTIVA ===== -->
+        <section id="manifiesto" class="py-16 md:py-24 bg-andes-terracotta text-andes-light">
             <div class="container mx-auto px-4 md:px-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                     <!-- IMAGEN: Reemplazar con una foto de alta calidad del equipo fundador o de jóvenes en acción creativa. -->
-                    <div class="w-full h-64 md:h-96 rounded-xl bg-cover bg-center shadow-lg" style="background-image: url('https://placehold.co/600x400/F4F1ED/0D2A4C?text=Nuestro+Equipo');">
+                    <div class="w-full h-64 md:h-full min-h-[300px] md:min-h-[450px] rounded-xl bg-cover bg-center shadow-lg" style="background-image: url('https://placehold.co/600x400/F4F1ED/B85C38?text=Nuestro+Equipo');">
                     </div>
                     
+                    <!-- Contenido Interactivo: Pestañas de Misión, Visión, Valores -->
                     <div class="md:pl-8">
-                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Nuestro Manifiesto</h2>
-                        <h3 class="text-2xl font-semibold text-andes-gold mb-6">Yuyayninchik</h3>
-                        <p class="text-lg mb-4">
-                            No somos solo creadores de contenido. Somos un movimiento.
-                        </p>
-                        <p class="text-andes-light/80 mb-4">
-                            Existimos porque crecimos sin vernos representados en los medios tradicionales. Cansados de estereotipos, decidimos tomar las cámaras y contar nuestras propias historias, en nuestros propios idiomas.
-                        </p>
-                        <p class="text-andes-light/80">
-                            Qhapaq Ñan Comunicaciones es nuestra plataforma para revalorizar la identidad andina, no como algo del pasado, sino como una fuerza viva, moderna y digital.
-                        </p>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Nosotros</h2>
+                        <h3 class="text-2xl font-semibold text-andes-gold mb-8">Yuyayninchik</h3>
+                        
+                        <!-- Controles (Pestañas) -->
+                        <div class="flex space-x-4 mb-6 border-b border-andes-light/30">
+                            <button id="tab-mision" data-tab="mision" class="tab-button pb-3 font-bold text-xl text-andes-light opacity-60 border-b-4 border-transparent hover:opacity-100 transition-all duration-300">
+                                Misión
+                            </button>
+                            <button id="tab-vision" data-tab="vision" class="tab-button pb-3 font-bold text-xl text-andes-light opacity-60 border-b-4 border-transparent hover:opacity-100 transition-all duration-300">
+                                Visión
+                            </button>
+                            <button id="tab-valores" data-tab="valores" class="tab-button pb-3 font-bold text-xl text-andes-light opacity-60 border-b-4 border-transparent hover:opacity-100 transition-all duration-300">
+                                Valores
+                            </button>
+                        </div>
+
+                        <!-- Contenido de las Pestañas -->
+                        <div id="content-container" class="relative min-h-[150px]">
+                            
+                            <!-- Misión Content (Activo por defecto) -->
+                            <div id="mision" class="tab-content absolute top-0 w-full opacity-100">
+                                <p class="text-lg text-andes-light/90">
+                                    Desarrollar contenidos audiovisuales digitales bilingües (Quechua y Castellano) para revalorizar la identidad cultural andina en jóvenes, consolidando una audiencia comprometida.
+                                </p>
+                            </div>
+                            
+                            <!-- Visión Content (Oculto) -->
+                            <div id="vision" class="tab-content absolute top-0 w-full opacity-0 hidden">
+                                <p class="text-lg text-andes-light/90">
+                                    Ser la plataforma digital líder y referente de la identidad andina moderna, conectando jóvenes en toda la Macrorregión Sur y generando un movimiento cultural sostenible.
+                                </p>
+                            </div>
+
+                            <!-- Valores Content (Oculto) -->
+                            <div id="valores" class="tab-content absolute top-0 w-full opacity-0 hidden">
+                                <ul class="list-disc list-inside text-lg text-andes-light/90 space-y-2 pl-4">
+                                    <li>**Autenticidad (Sumaq Kawsay):** Honrar nuestra herencia mientras abrazamos la modernidad.</li>
+                                    <li>**Pertenencia (Ayllu):** Crear un espacio seguro y acogedor para la diáspora andina.</li>
+                                    <li>**Respeto (Riqsikuy):** Fomentar el diálogo y la apreciación de todas las culturas.</li>
+                                    <li>**Innovación (Musuq Yuyay):** Usar la tecnología para impulsar la creatividad y la difusión cultural.</li>
+                                </ul>
+                            </div>
+
+                        </div>
                     </div>
+                    <!-- Fin de Contenido Interactivo -->
+
                 </div>
             </div>
         </section>
@@ -286,13 +324,13 @@
         <!-- ===== F. NEWSLETTER (Flujo de Suscripción) ===== -->
         <section id="newsletter" class="py-16 md:py-24 bg-andes-gold">
             <div class="container mx-auto px-4 md:px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-andes-blue mb-4">¡No te pierdas de nada!</h2>
-                <p class="text-lg text-andes-blue/80 max-w-2xl mx-auto mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-andes-terracotta mb-4">¡No te pierdas de nada!</h2>
+                <p class="text-lg text-andes-terracotta/80 max-w-2xl mx-auto mb-8">
                     Suscríbete a nuestra comunidad. Recibe primero los nuevos videos, descuentos exclusivos para talleres y participa en nuestras campañas.
                 </p>
                 <form class="flex flex-col md:flex-row justify-center max-w-lg mx-auto gap-3">
-                    <input type="email" placeholder="Tu correo electrónico" class="w-full md:w-auto flex-grow px-5 py-3 rounded-lg border-2 border-transparent focus:border-andes-blue focus:ring-0" required>
-                    <button type="submit" class="bg-andes-blue text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300">
+                    <input type="email" placeholder="Tu correo electrónico" class="w-full md:w-auto flex-grow px-5 py-3 rounded-lg border-2 border-transparent focus:border-andes-terracotta focus:ring-0" required>
+                    <button type="submit" class="bg-andes-terracotta text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300">
                         Suscribirme
                     </button>
                 </form>
@@ -302,7 +340,7 @@
     </main>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="bg-andes-blue text-andes-light/70 py-12">
+    <footer class="bg-andes-terracotta text-andes-light/70 py-12">
         <div class="container mx-auto px-4 md:px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
                 <!-- Columna 1: Logo y Misión -->
@@ -325,7 +363,7 @@
                         </a>
                         <!-- Icono Instagram -->
                         <a href="#" class="hover:text-white" aria-label="Instagram">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.172.052 1.982.218 2.69.465a4.902 4.902 0 0 1 1.732 1.057 4.902 4.902 0 0 1 1.057 1.732c.247.708.413 1.518.465 2.69C21.988 8.416 22 8.796 22 12c0 3.204-.012 3.584-.07 4.85-.052 1.172-.218 1.982-.465 2.69a4.902 4.902 0 0 1-1.057 1.732 4.902 4.902 0 0 1-1.732 1.057c-.708.247-1.518.413-2.69.465C15.584 21.988 15.204 22 12 22c-3.204 0-3.584-.012-4.85-.07-1.172-.052-1.982-.218-2.69-.465a4.902 4.902 0 0 1-1.732-1.057 4.902 4.902 0 0 1-1.057-1.732c-.247-.708-.413-1.518-.465-2.69C2.012 15.584 2 15.204 2 12c0-3.204.012-3.584.07-4.85.052-1.172.218-1.982.465-2.69A4.902 4.902 0 0 1 3.584 3.732 4.902 4.902 0 0 1 5.316 2.675c.708-.247 1.518-.413 2.69-.465C8.416 2.012 8.796 2 12 2c.091 0 .181 0 .27 0zm0 1.943c-3.142 0-3.51.012-4.73.069-1.11.05-1.78.213-2.18.373-.44.17-.79.377-1.14.73-.35.35-.56.7-.73 1.14-.16.4-.323 1.07-.373 2.18-.057 1.22-.069 1.588-.069 4.73s.012 3.51.069 4.73c.05 1.11.213 1.78.373 2.18.17.44.377.79.73 1.14.35.35.7.56 1.14.73.4.16 1.07.323 2.18.373 1.22.057 1.588.069 4.73.069s3.51-.012 4.73-.069c1.11-.05 1.78-.213 2.18-.373.44-.17.79-.377 1.14-.73.35-.35.56-.7.73-1.14.16-.4.323-1.07.373-2.18.057-1.22.069-1.588.069-4.73s-.012-3.51-.069-4.73c-.05-1.11-.213-1.78-.373-2.18-.17-.44-.377-.79-.73-1.14-.35-.35-.7-.56-1.14-.73-.4-.16-1.07-.323-2.18-.373C15.51 4.116 15.142 4.106 12 4.106zM12 9.124a2.876 2.876 0 1 0 0 5.752 2.876 2.876 0 0 0 0-5.752zM12 16.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9zm6.406-11.845a1.06 1.06 0 1 0 0-2.12 1.06 1.06 0 0 0 0 2.12z"></path></svg>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.172.052 1.982.218 2.69.465a4.902 4.902 0 0 1 1.732 1.057 4.902 4.902 0 0 1 1.057 1.732c.247.708.413 1.518.465 2.69C21.988 8.416 22 8.796 22 12c0 3.204-.012 3.584-.07 4.85-.052 1.172-.218 1.982-.465 2.69a4.902 4.902 0 0 1-1.057 1.732 4.902 4.902 0 0 1-1.732 1.057c-.708.247-1.518.413-2.69.465C15.584 21.988 15.204 22 12 22c-3.204 0-3.584-.012-4.85-.07-1.172-.052-1.982-.218-2.69-.465a4.902 4.902 0 0 1-1.732-1.057 4.902 4.902 0 0 1-1.057-1.732c-.247-.708-.413-1.518-.465-2.69C2.012 15.584 2 15.204 2 12c0-3.204.012-3.584.07-4.85.052-1.172.218-1.982.465-2.69A4.902 4.902 0 0 1 3.584 3.732 4.902 4.902 0 0 1 5.316 2.675c.708-.247 1.518-.413 2.69-.465C8.416 2.012 8.796 2 12 2c.091 0 .181 0 .27 0zm0 1.943c-3.142 0-3.51.012-4.73.069-1.11.05-1.78.213-2.18.373-.44.17-.79.377-1.14.73-.35.35-.56.7-.73 1.14-.16.4-.323 1.07-.373 2.18-.057 1.22-.069 1.588-.069 4.73s.012 3.51.069 4.73c.05 1.11.213 1.78.373 2.18.17.44.377.79.73 1.14.35.35.7.56 1.14.73.4.16 1.07.323 2.18.373 1.22.057 1.588.069 4.73.069s3.51-.012 4.73-.069c1.11-.05 1.78-.213 2.18-.373.44-.17.79-.377 1.14-.73.35-.35.56.7.73-1.14.16-.4.323-1.07.373-2.18.057-1.22.069-1.588.069-4.73s-.012-3.51-.069-4.73c-.05-1.11-.213-1.78-.373-2.18-.17-.44-.377-.79-.73-1.14-.35-.35-.7-.56-1.14-.73-.4-.16-1.07.323-2.18-.373C15.51 4.116 15.142 4.106 12 4.106zM12 9.124a2.876 2.876 0 1 0 0 5.752 2.876 2.876 0 0 0 0-5.752zM12 16.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9zm6.406-11.845a1.06 1.06 0 1 0 0-2.12 1.06 1.06 0 0 0 0 2.12z"></path></svg>
                         </a>
                     </div>
                 </div>
@@ -344,8 +382,9 @@
         </div>
     </footer>
 
-    <!-- Script para el menú móvil -->
+    <!-- Script para el menú móvil y la nueva interactividad de 'Nosotros' -->
     <script>
+        // --- Lógica del Menú Móvil ---
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -360,6 +399,55 @@
                 mobileMenu.classList.add('hidden');
             });
         }
+
+        // --- Lógica de Pestañas de la Sección Nosotros ---
+        
+        // Función para cambiar el contenido activo
+        function showTab(tabId) {
+            // 1. Ocultar todos los contenidos y restablecer opacidad
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('opacity-100');
+                content.classList.add('opacity-0');
+            });
+
+            // 2. Desactivar todos los botones
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('opacity-100', 'border-white');
+                button.classList.add('opacity-60', 'border-transparent');
+            });
+
+            // 3. Mostrar el contenido seleccionado
+            const activeContent = document.getElementById(tabId);
+            if (activeContent) {
+                activeContent.classList.remove('hidden');
+                // Forzar un repaint para asegurar la transición
+                setTimeout(() => {
+                    activeContent.classList.remove('opacity-0');
+                    activeContent.classList.add('opacity-100');
+                }, 10); // Pequeño delay para la transición
+            }
+
+            // 4. Activar el botón correspondiente
+            const activeButton = document.getElementById(`tab-${tabId}`);
+            if (activeButton) {
+                activeButton.classList.remove('opacity-60', 'border-transparent');
+                activeButton.classList.add('opacity-100', 'border-white');
+            }
+        }
+
+        // Añadir listeners a los botones
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const tabId = e.currentTarget.getAttribute('data-tab');
+                showTab(tabId);
+            });
+        });
+
+        // Mostrar la pestaña "Misión" por defecto al cargar
+        window.onload = function() {
+            showTab('mision');
+        };
     </script>
 </body>
 </html>
